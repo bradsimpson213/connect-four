@@ -2,17 +2,17 @@ export class Column {
     constructor() {
         this.tokens = [null, null, null, null, null, null];
     }
-    add(player) {
-        for (let i = this.tokens.length - 1; i >= 0; i--) {
+
+    add(playerNumber) {
+        for (let i = 5; i >= 0; i-= 1) {
             if (this.tokens[i] === null) {
-                this.tokens[i] = player;
+                this.tokens[i] = playerNumber;
                 break;
             }
         }
     }
-    getTokenAt(rowNum) {
-        return token[token.length - rowNum];
+
+    getTokenAt(rowIndex) {
+        return this.tokens[rowIndex];
     }
-
-
 }
