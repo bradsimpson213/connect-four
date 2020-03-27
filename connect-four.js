@@ -30,8 +30,17 @@ function updateUi() {
             }
         }
     }
+    for(let col = 0; col <= 6; col++) {
+        const column = document.querySelector(`#column-${col}`);
+        const fullColumn = game.isColumnFull(col);
+        if( fullColumn === true){
+            column.classList.add("full");
+        } else {
+            column.classList.remove("full");
+        }
 
-
+    }
+    
     if (game.currentPlayer === 1) {
         const targetElement = document.getElementById("click-targets");
         targetElement.classList.remove("red");
@@ -63,7 +72,6 @@ window.addEventListener("DOMContentLoaded", () => {
     newGameButton.addEventListener('click', event => {
         newGameButton.disabled = true;
         game = new Game(player1.value, player2.value);
-
         newGameButton.disabled = (player1.value.length === 0 ||
             player2.value.length === 0); 
 
@@ -71,17 +79,20 @@ window.addEventListener("DOMContentLoaded", () => {
         player2.value = null;
         updateUi();
     });
-
     document
         .getElementById("click-targets")
         .addEventListener("click", event => {
+            
+            
             const clickTarget = event.target.id;
             if (!clickTarget.startsWith("column-")) return;
 
             const columnIndex = clickTarget.slice(7);
+            
+           
             game.playInColumn(columnIndex);
             updateUi();
-            console.log(game.columns);
+            //console.log(game.columns);
         });
 
 })
