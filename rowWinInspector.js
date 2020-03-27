@@ -1,7 +1,6 @@
 export class RowWinInspector{
     constructor(columns){
         this.columns = columns;
-        console.log(this.columns);
     }
 
     inspect() {
@@ -10,7 +9,6 @@ export class RowWinInspector{
             let col2 = this.columns[1].getTokenAt(row);
             let col3 = this.columns[2].getTokenAt(row);
             let col4 = this.columns[3].getTokenAt(row);
-            console.log( col1, col2, col3, col4);
             if (col1 === col2 && col2 === col3 &&
                 col3 === col4 && col1 !== null) {
                 return col1;

@@ -82,17 +82,19 @@ window.addEventListener("DOMContentLoaded", () => {
     document
         .getElementById("click-targets")
         .addEventListener("click", event => {
-            
+       
+            const getWinner = game.getWinNum();
+            if (getWinner !== 0) {
+                return;
+            }
             
             const clickTarget = event.target.id;
             if (!clickTarget.startsWith("column-")) return;
 
             const columnIndex = clickTarget.slice(7);
-            
-           
+                      
             game.playInColumn(columnIndex);
             updateUi();
-            //console.log(game.columns);
         });
 
 })

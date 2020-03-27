@@ -9,7 +9,6 @@ export class DiagonalWinInspector{
             let col2 = this.columns[1].getTokenAt(row + 1);
             let col3 = this.columns[2].getTokenAt(row + 2);
             let col4 = this.columns[3].getTokenAt(row + 3);
-            //console.log( col1, col2, col3, col4);
             if (col1 === col2 && col2 === col3 &&
                 col3 === col4 && col1 !== null) {
                 return col1;
@@ -20,7 +19,6 @@ export class DiagonalWinInspector{
             let col2 = this.columns[1].getTokenAt(row - 1);
             let col3 = this.columns[2].getTokenAt(row - 2);
             let col4 = this.columns[3].getTokenAt(row - 3);
-            //console.log( col1, col2, col3, col4);
             if (col1 === col2 && col2 === col3 &&
                 col3 === col4 && col1 !== null) {
                 return col1;

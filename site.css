@@ -67,7 +67,9 @@ main {
 
 #game-name {
   text-align: center;
-  padding: 5px;
+  font-weight: bold;
+  font-size: xx-large;
+  padding: 10px;
 }
 
 #overlay {

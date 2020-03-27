@@ -20,6 +20,10 @@ export class Game {
         ];
     }
 
+    getWinNum() {
+        return this.winnerNumber;
+    }
+
     getName() {
         switch(this.winnerNumber) {
             case 0:
@@ -85,7 +89,6 @@ export class Game {
             }
         }
     }
-
 
     playInColumn(index) {
         this.columns[index].add(this.currentPlayer);
